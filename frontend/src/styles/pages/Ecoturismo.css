@@ -1,0 +1,125 @@
+/* frontend/src/styles/pages/Ecoturismo.css */
+
+/* Contenedor principal */
+.ecoturismo-container {
+    text-align: center;
+    padding: 40px;
+    background-color: #f0f8ff;
+  }
+  
+  /* Título principal */
+  .ecoturismo-container h1 {
+    font-size: 2.5em;
+    color: #2a6f97;
+    margin-bottom: 10px;
+  }
+  
+  /* Descripción general */
+  .ecoturismo-container p {
+    font-size: 1.2em;
+    color: #555;
+    margin-bottom: 30px;
+  }
+  
+  /* Lista de rutas */
+  .rutas-lista {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    align-items: center;
+  }
+  
+  /* Tarjeta de cada ruta */
+  .ruta-item {
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 600px;
+    padding: 20px;
+    text-align: left;
+  }
+  
+  /* Imagen de la ruta */
+  .ruta-item img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+  }
+  
+  /* Título de la ruta */
+  .ruta-item h2 {
+    font-size: 1.8em;
+    margin-top: 10px;
+    color: #2a6f97;
+  }
+  
+  /* Descripción breve */
+  .ruta-item p {
+    font-size: 1em;
+    color: #666;
+    margin-top: 10px;
+  }
+  
+  /* Botón 'Más detalles' */
+  .ruta-item button {
+    margin-top: 15px;
+    padding: 10px 20px;
+    background-color: #2a6f97;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .ruta-item button:hover {
+    background-color: #1e4d6d;
+  }
+  
+  /* Fondo del modal */
+  .modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  /* Contenido del modal */
+  .modal-content {
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 10px;
+    width: 670px;
+    max-height: 80vh;
+    overflow-y: auto;
+    text-align: center;
+  }
+  
+  /* Imagen dentro del modal */
+  .modal-content img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin-bottom: 20px;
+  }
+  
+  /* Botón de cerrar modal */
+  .modal-content button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #d9534f;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .modal-content button:hover {
+    background-color: #c9302c;
+  }
+  

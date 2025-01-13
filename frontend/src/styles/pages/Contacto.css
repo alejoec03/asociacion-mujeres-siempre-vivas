@@ -1,0 +1,56 @@
+/* frontend/src/styles/pages/Contacto.css */
+
+.contacto-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  background: linear-gradient(135deg, #3a8dde, #76b9f2);
+  border-radius: 15px;
+  margin: 20px;
+  color: white;
+  font-family: 'Arial', sans-serif;
+  text-align: center;
+}
+
+.contacto-info h1 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+.contacto-info p {
+  margin: 10px 0;
+  font-size: 1.1rem;
+}
+
+.contacto-info a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.contacto-info a:hover {
+  text-decoration: underline;
+}
+
+.icon {
+  width: 20px;
+  margin-right: 8px;
+  vertical-align: middle;
+}
+
+.contacto-mapa {
+  margin-top: 20px;
+  width: 100%;
+  max-width: 800px;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+iframe {
+  width: 100%;
+  height: 450px;
+  border: none;
+}
