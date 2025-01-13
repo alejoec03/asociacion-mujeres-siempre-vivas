@@ -1,0 +1,96 @@
+/* Tarjeta de mujer */
+.mujer-card {
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    padding: 15px;
+    text-align: center;
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  }
+  
+  .mujer-foto {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+  }
+  
+  .btn-detalles {
+    margin-top: 10px;
+    padding: 8px 12px;
+    background-color: #6a1b9a;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .btn-detalles:hover {
+    background-color: #4a148c;
+  }
+  
+  /* Modal */
+  .modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+  }
+  
+  .modal-content {
+    background-color: #4a148c;
+    color: #fff;
+    padding: 20px;
+    border-radius: 15px;
+    width: 80%;
+    max-width: 600px;
+    position: relative;
+  }
+  
+  .close-modal {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 20px;
+    cursor: pointer;
+  }
+  
+  .modal-foto {
+    width: 100px;
+    height: 100px;
+    border-radius: 10px;
+    margin-right: 15px;
+  }
+  
+  .modal-info {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+    margin-bottom: 15px;
+  }
+  
+  .modal-descripcion h4,
+  .modal-historia h4,
+  .modal-proceso h4 {
+    margin-bottom: 5px;
+  }
+  
+  .modal-historia,
+  .modal-proceso {
+    margin-top: 15px;
+  }
+  
+  .modal-proceso-img {
+    width: 100%;
+    border-radius: 10px;
+  }
+  
