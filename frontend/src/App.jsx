@@ -8,11 +8,16 @@ import { RestablecerContrasena } from "./pages/RestablecerContrasena"
 import { Productos } from "./pages/Productos"
 import { Ecoturismo } from "./pages/Ecoturismo"
 import { Contacto } from "./pages/Contacto"
+import { CartProvider  } from "./context/CartContext"
+import { Carrito } from "./pages/Carrito";
 
 function App() {
 
   return (
+    <CartProvider >
    <>
+  
+
   <Router>
       <Navbar/>
       <Routes>
@@ -24,12 +29,17 @@ function App() {
           <Route path="/restablecer-contrasena" element={<RestablecerContrasena />} />
           <Route path="/productos" element={<Productos/>}/>
           <Route path="/ecoturismo" element={<Ecoturismo/>}/>
-          <Route path="/contacto" element={<Contacto/>}/>        
+          <Route path="/contacto" element={<Contacto/>}/>    
+          <Route path="/" element={<Productos />} />
+          <Route path="/carrito" element={<Carrito />} />    
           
       </Routes>
 
   </Router>  
-   </>
+
+  
+  </>
+  </CartProvider >
   )
 }
 

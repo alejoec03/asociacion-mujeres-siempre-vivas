@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useContext  } from 'react';
 import "../styles/pages/Productos.css";
 import producto1 from '/src/assets/imagenes/producto1.jpg';
 import producto2 from '/src/assets/imagenes/producto2.jpg';
@@ -7,8 +7,13 @@ import producto4 from '/src/assets/imagenes/producto4.jpg';
 import producto5 from '/src/assets/imagenes/producto5.jpg';
 import producto6 from '/src/assets/imagenes/producto6.jpg';
 
+//import { useCarrito } from "../context/CartContext";
+
+import { CartContext } from "../context/CartContext";
+
 const productosData = [
   {
+    id: 1,
     nombre: "Aceite de manzanilla",
     imagen: "/src/assets/imagenes/producto1.jpg", // Reemplaza con la URL real de la imagen
     descripcion: "Aceite esencial de manzanilla para uso terapéutico.",
@@ -17,6 +22,7 @@ const productosData = [
     precio: "$20,000",
   },
   {
+    id: 2,
     nombre: "Shampoo de romero",
     imagen: "/src/assets/imagenes/producto2.jpg", // Reemplaza con la URL real de la imagen
     descripcion: "Shampoo natural hecho con extracto de romero.",
@@ -25,6 +31,7 @@ const productosData = [
     precio: "$18,000",
   },
   {
+    id: 3,
     nombre: "Glicerina de romero",
     imagen: "/src/assets/imagenes/producto3.jpg", // Reemplaza con la URL real de la imagen
     descripcion: "Hidratante natural con extracto de romero.",
@@ -33,6 +40,7 @@ const productosData = [
     precio: "$15,000",
   },
   {
+    id: 4,
     nombre: "Labial natural",
     imagen: "/src/assets/imagenes/producto4.jpg", // Reemplaza con la URL real de la imagen
     descripcion: "Labial hidratante con ingredientes naturales.",
@@ -41,6 +49,7 @@ const productosData = [
     precio: "$10,000",
   },
   {
+    id: 5,
     nombre: "Aceite de finas hierbas",
     imagen: "/src/assets/imagenes/producto5.jpg", // Reemplaza con la URL real de la imagen
     descripcion: "Aceite gourmet de finas hierbas.",
@@ -49,6 +58,7 @@ const productosData = [
     precio: "$25,000",
   },
   {
+    id: 6,
     nombre: "Aceite de manzanilla",
     imagen: "/src/assets/imagenes/producto6.jpg", // Reemplaza con la URL real de la imagen
     descripcion: "Aceite esencial de manzanilla para uso terapéutico.",
@@ -71,6 +81,33 @@ export const Productos = () => {
     setSelectedProducto(null);
   };
 
+  const { cartItems, removeFromCart } = useContext(CartContext);
+
+
+
+  const { addToCart } = useContext(CartContext);
+  const [productQuantities, setProductQuantities] = useState({});
+  
+  const handleIncrement = (productId) => {
+    setProductQuantities((prev) => ({
+      ...prev,
+      [productId]: (prev[productId] || 0) + 1,
+    }));
+  };
+
+  const handleDecrement = (productId) => {
+    setProductQuantities((prev) => ({
+      ...prev,
+      [productId]: Math.max((prev[productId] || 0) - 1, 0),
+    }));
+  };
+
+  const handleAddToCart = (productId) => {
+    const quantity = productQuantities[productId] || 1; // Por defecto, al menos 1 producto
+    addToCart({ id: productId, quantity });
+    alert(`Se agregaron ${quantity} productos al carrito.`);
+  };
+
   return (
     <div className="productos-page">
       <h1>PRODUCTOS</h1>
@@ -89,9 +126,31 @@ export const Productos = () => {
               <button className="producto-detalles" onClick={() => openModal(producto)}>
                 Más detalles
               </button>
-              <button className="producto-agregar">
+              
+              
+              <div className="producto-botones">
+              <div className="producto-contador">
+                <button
+                  className="btn btn-decrement"
+                  onClick={() => handleDecrement(producto.id)}
+                >
+                  -
+                </button>
+                <span>{productQuantities[producto.id] || 1}</span>
+                <button
+                  className="btn btn-increment"
+                  onClick={() => handleIncrement(producto.id)}
+                >
+                  +
+                </button>
+              </div>
+              <button
+                className="btn agregar-carrito"
+                onClick={() => handleAddToCart(producto.id)}
+              >
                 Agregar al carrito
               </button>
+            </div>
             </div>
           </div>
         ))}

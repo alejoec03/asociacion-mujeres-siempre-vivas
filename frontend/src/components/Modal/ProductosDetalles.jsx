@@ -1,6 +1,13 @@
 import React, { useState } from "react";
 import "../styles/componentes/ProductosDetalles.css";
 
+import producto1 from '/src/assets/imagenes/producto1.jpg';
+import producto2 from '/src/assets/imagenes/producto2.jpg';
+import producto3 from '/src/assets/imagenes/producto3.jpg';
+import producto4 from '/src/assets/imagenes/producto4.jpg';
+import producto5 from '/src/assets/imagenes/producto5.jpg';
+import producto6 from '/src/assets/imagenes/producto6.jpg';
+
 const ProductosDetalles = ({ producto }) => {
   const [showModal, setShowModal] = useState(false);
 
@@ -11,6 +18,36 @@ const ProductosDetalles = ({ producto }) => {
   const handleCloseModal = () => {
     setShowModal(false);
   };
+
+
+
+
+
+  const { addToCart } = useContext(CartContext);
+  const [productQuantities, setProductQuantities] = useState({});
+
+  const handleIncrement = (productId) => {
+    setProductQuantities((prev) => ({
+      ...prev,
+      [productId]: (prev[productId] || 0) + 1,
+    }));
+  };
+
+  const handleDecrement = (productId) => {
+    setProductQuantities((prev) => ({
+      ...prev,
+      [productId]: Math.max((prev[productId] || 0) - 1, 0),
+    }));
+  };
+
+  const handleAddToCart = (productId) => {
+    const quantity = productQuantities[productId] || 1; // Por defecto, al menos 1 producto
+    addToCart({ id: productId, quantity });
+    alert(`Se agregaron ${quantity} productos al carrito.`);
+  };
+
+
+
 
   return (
     <div className="producto-card">
