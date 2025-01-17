@@ -109,6 +109,7 @@ export const Productos = () => {
   };
 
   return (
+    <div className="producto-modal">
     <div className="productos-page">
       <h1>PRODUCTOS</h1>
       <div className="productos-container">
@@ -163,7 +164,7 @@ export const Productos = () => {
             <button className="close-modal" onClick={closeModal}>
               ✕
             </button>
-            <h2>{selectedProducto.nombre}</h2>
+            <h4>{selectedProducto.nombre}</h4>
             <div className="modal-info">
               <img src={selectedProducto.imagen} alt={selectedProducto.nombre} className="modal-foto" />
               <div className="modal-descripcion">
@@ -188,7 +189,7 @@ export const Productos = () => {
         </p>
       </footer>
     </div>
-
+    </div>
     
 
   );

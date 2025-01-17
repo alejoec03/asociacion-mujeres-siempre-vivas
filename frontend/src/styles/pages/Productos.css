@@ -1,173 +1,310 @@
 /* Estilos de la página de productos */
 .productos-page {
-    padding: 20px;
-    text-align: center;
-    background-color: #f9f9f9;
-  }
+  padding: 20px;
+  text-align: center;
+  background-color: #f9f9f9;
   
-  .productos-page h1 {
-    font-size: 2.5rem;
-    color: #6a1b9a;
-    margin-bottom: 40px;
-  }
+}
+
+.productos-page h1 {
+  font-size: 2.5rem;
+  color: #6a1b9a;
+  margin-bottom: 40px;
+}
+
+.productos-page .productos-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  padding-bottom: 60px;
+}
+
+.productos-page .producto-card {
+  width: 506px;
+  height: 490px;
+  background-color: #fff;
+  border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   
-  .productos-container {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-    justify-content: center;
-  }
+}
+
+.productos-page .producto-imagen {
+  width: 100%;
+  height: 280px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.productos-page .producto-card h3 {
+  font-size: 1.5rem;
+  color: #333;
+  margin: 10px 0;
+}
+
+.productos-page .producto-card p {
+  font-size: 1rem;
+  color: #666;
+}
+
+.productos-page .producto-precio {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #4caf50;
+  margin: 10px 0;
+}
+
+.productos-page .producto-botones {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+}
+
+.productos-page .producto-botones .btn {
+  background-color: #6a1b9a; /* Color morado predominante */
+  color: #fff; /* Texto en blanco para contraste */
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.productos-page .producto-botones .btn:hover {
+  background-color: #4a148c; /* Morado más oscuro al pasar el cursor */
+  transform: translateY(-2px); /* Efecto de elevación */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+.productos-page .producto-botones .btn:active {
+  background-color: #8e24aa; /* Morado intermedio al hacer clic */
+  transform: translateY(0); /* Remueve la elevación */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+
+.productos-page .producto-detalles,
+.productos-page .producto-agregar {
+  padding: 10px 15px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.productos-page .producto-detalles {
+  background-color: #6a1b9a;
+  color: #fff;
+}
+
+.productos-page .producto-detalles:hover {
+  background-color: #4a148c;
+}
+
+.productos-page .producto-agregar {
+  background-color: #4caf50;
+  color: #fff;
+}
+
+.productos-page .producto-agregar:hover {
+  background-color: #388e3c;
+}
+
+/* Añadir espacio al final de la página */
+.productos-page {
+  padding-left: 0px;
+  padding-right: 0px;
+  padding-bottom: 00px; /* Ajusta este valor según la altura del footer */
+}
+
+/* Pie de página */
+.productos-page .footer {
   
-  .producto-card {
-    width: 506px;
-    height: 490px;
-    background-color: #fff;
-    border-radius: 15px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    text-align: center;
-    padding: 15px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-  }
+  background-color: #4c00b5;
+  color: white;
+  padding: 1rem 0;
+  font-size: 0.9rem;
+  bottom: 0; /* Asegurar que se quede en el pie de la página */
+  width: 100%; /* Ocupa todo el ancho de la pantalla */
+  top: 20;
+  text-align: center; /* Centrar el texto */
+  bottom: 0; /* Asegurar que se quede en el pie de la página */
+  width: 100%; /* Ocupa todo el ancho de la pantalla */
+  text-align: center; /* Centrar el texto */
+  z-index: 100; /* Asegurarse de que esté por encima de otros elementos */
   
-  .producto-imagen {
-    width: 100%;
-    height: 280px;
-    object-fit: cover;
-    border-radius: 10px;
-  }
-  
-  .producto-card h3 {
-    font-size: 1.5rem;
-    color: #333;
-    margin: 10px 0;
-  }
-  
-  .producto-card p {
-    font-size: 1rem;
-    color: #666;
-  }
-  
-  .producto-precio {
-    font-size: 1.2rem;
-    font-weight: bold;
-    color: #4caf50;
-    margin: 10px 0;
-  }
-  
-  .producto-botones {
-    display: flex;
-    gap: 10px;
-    justify-content: center;
-  }
-  
-  .producto-detalles,
-  .producto-agregar {
-    padding: 10px 15px;
-    font-size: 1rem;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-  }
-  
-  .producto-detalles {
-    background-color: #6a1b9a;
-    color: #fff;
-  }
-  
-  .producto-detalles:hover {
-    background-color: #4a148c;
-  }
-  
-  .producto-agregar {
-    background-color: #4caf50;
-    color: #fff;
-  }
-  
-  .producto-agregar:hover {
-    background-color: #388e3c;
-  }
-  
-  /* Pie de página */
-  .footer {
-    background-color: #4c00b5;
-    color: white;
-    padding: 1rem 0;
-    font-size: 0.9rem;
-  }
-
-  
+}
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* Modal */
-.modal-overlay {
+/* Modal Overlay */
+.producto-modal .modal-overlay {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.8);
+  background-color: rgba(0, 0, 0, 0.7);
   display: flex;
   justify-content: center;
   align-items: center;
   z-index: 1000;
+  transition: opacity 0.3s ease-in-out;
 }
 
-.modal-content {
-  background-color: #4a148c;
+/* Modal Content */
+.producto-modal .modal-content {
+  background-color: #6a1b9a;
   color: #fff;
-  padding: 20px;
-  border-radius: 15px;
-  width: 80%;
-  max-width: 600px;
+  padding: 30px;
+  border-radius: 16px;
+  width: 85%;
+  max-width: 700px;
+  max-height: 90vh; /* Añadido para limitar la altura */
   position: relative;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  overflow-y: auto; /* Añadido para permitir desplazamiento si el contenido es largo */
+  transform: scale(0.9);
+  animation: modalFadeIn 0.3s forwards;
 }
 
-.close-modal {
+/* Animación de apertura */
+@keyframes modalFadeIn {
+  from {
+    transform: scale(0.9);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* Close Button */
+.producto-modal .close-modal {
   position: absolute;
-  top: 10px;
-  right: 10px;
+  top: 20px;
+  right: 20px;
   background: none;
   border: none;
   color: #fff;
-  font-size: 20px;
+  font-size: 26px;
   cursor: pointer;
+  transition: color 0.3s ease;
 }
 
-.modal-foto {
-  width: 100px;
-  height: 100px;
-  border-radius: 10px;
-  margin-right: 15px;
+.producto-modal .close-modal:hover {
+  color: #f44336;
 }
 
-.modal-info {
-  display: flex;
-  gap: 15px;
-  align-items: center;
-  margin-bottom: 15px;
-}
-
-.modal-proceso-img {
+/* Nombre del Producto */
+.producto-modal .modal-content h4 {
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-align: center;
+  color: #fff;
+  margin-bottom: 40px;
+  text-transform: capitalize;
+  letter-spacing: 1px;
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
+  padding: 10px;
+  background-color: rgba(0, 0, 0, 0.4);
+  border-radius: 8px;
   width: 100%;
-  border-radius: 10px;
+}
+
+/* Modal Info Section */
+.producto-modal .modal-info {
+  display: flex;
+  gap: 25px;
+  align-items: flex-start;
+  justify-content: center;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+}
+
+/* Imagen del Producto */
+.producto-modal .modal-foto {
+  width: 140px;
+  height: 140px;
+  border-radius: 12px;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.producto-modal .modal-foto:hover {
+  transform: scale(1.1);
+}
+
+/* Descripción y Utilidad */
+.producto-modal .modal-descripcion,
+.producto-modal .modal-utilidad {
+  background-color: #ffffff;
+  color: #333;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  max-width: 320px;
+  flex: 1 1 320px;
+  margin-bottom: 20px;
+}
+
+.producto-modal .modal-descripcion h4,
+.producto-modal .modal-utilidad h4 {
+  font-size: 1.4rem;
+  color: #6a1b9a;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+/* Párrafos dentro de las secciones */
+.producto-modal .modal-descripcion p,
+.producto-modal .modal-utilidad p {
+  font-size: 1rem;
+  color: #555;
+  line-height: 1.6;
+  text-align: justify;
+}
+
+/* Proceso de imagen */
+.producto-modal .modal-proceso-img {
+  width: 100%;
+  max-width: 100%;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.producto-modal .modal-proceso-img:hover {
+  transform: scale(1.05);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .producto-modal .modal-content {
+    width: 90%;
+    padding: 20px;
+  }
+
+  .producto-modal .modal-info {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .producto-modal .modal-foto {
+    margin-bottom: 15px;
+  }
 }
 
 
@@ -177,16 +314,14 @@
 
 
 
-
-
-
+/* Contador de Productos */
 .producto-contador {
   display: flex;
   align-items: center;
   gap: 8px;
 }
 
-.btn {
+.producto-contador .btn {
   background-color: #007bff;
   color: white;
   border: none;
@@ -195,12 +330,12 @@
   cursor: pointer;
 }
 
-.btn:hover {
+.producto-contador .btn:hover {
   background-color: #0056b3;
 }
 
-.btn-decrement,
-.btn-increment {
+.producto-contador .btn-decrement,
+.producto-contador .btn-increment {
   width: 32px;
   height: 32px;
   font-size: 16px;
@@ -214,7 +349,32 @@
   cursor: pointer;
 }
 
-.btn-decrement:hover,
-.btn-increment:hover {
+.producto-contador .btn-decrement:hover,
+.producto-contador .btn-increment:hover {
   background-color: #0056b3;
+}
+
+.productos-page .btn.agregar-carrito {
+  background-color: #6a1b9a; /* Color morado predominante */
+  color: #fff; /* Texto en blanco para contraste */
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.productos-page .btn.agregar-carrito:hover {
+  background-color: #4a148c; /* Morado más oscuro al pasar el cursor */
+  transform: translateY(-2px); /* Efecto de elevación */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+.productos-page .btn.agregar-carrito:active {
+  background-color: #8e24aa; /* Morado intermedio al hacer clic */
+  transform: translateY(0); /* Remueve la elevación */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }

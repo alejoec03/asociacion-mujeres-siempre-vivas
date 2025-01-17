@@ -5,6 +5,8 @@ import { InstagramLogo } from "phosphor-react";
 export const Contacto = () => {
 
   return (
+    <div class="contacto-page">
+    
     <div className="contacto-container">
       <div className="contacto-info">
         <h1>Contacto</h1>
@@ -33,6 +35,7 @@ export const Contacto = () => {
           title="Ubicación de la Asociación Mujeres Siempre Vivas"
         ></iframe>
       </div>
+    </div>
     </div>
   );
 };

@@ -75,9 +75,9 @@ export const Carrito = () => {
   );
 
   return (
-    
+    <div class="carrito-page">
     <div className="carrito-page">
-      <h1>Carrito de Compras</h1>
+      <h1>CARRITO DE COMPRAS</h1>
       {productosEnCarrito.length === 0 ? (
         <p>Tu carrito está vacío.</p>
       ) : (
@@ -112,6 +112,18 @@ export const Carrito = () => {
           </div>
         </>
       )}
+
+     {/* Pie de página */}
+     <footer className="footer">
+        <p>
+          Copyright © 2025 Asociación Mujeres Siempre Vivas. Todos los derechos
+          reservados.
+        </p>
+      </footer>
+
     </div>
+    </div>
+
+    
   );
 };

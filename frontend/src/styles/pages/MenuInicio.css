@@ -72,145 +72,285 @@ body {
 
 
 
-  /* Cards */
+/* Cards */
 .cards-container {
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(2, 344px); /* Dos columnas de ancho fijo */
   gap: 20px;
   justify-content: center;
   margin-top: 20px;
 }
 
 .card {
-  background-color: #fff;
-  border: 1px solid #ccc;
-  border-radius: 10px;
-  padding: 15px;
+  width: 344px;
+  height: 388px;
+  background: linear-gradient(145deg, #fff, #f0f0f0);
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  padding: 1rem;
   text-align: center;
-  width: 200px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #4c00b5;
 }
 
 .card-image {
-  width: 100%;
-  height: auto;
-  border-radius: 10px;
+  width: 120px;
+  height: 120px;
+  margin: 0 auto 1rem;
+  border-radius: 50%;
+  background: #f9f9f9;
+  padding: 10px;
+  border: 2px solid #ddd;
+}
+
+.card-description {
+  font-size: 0.95rem;
+  color: #555;
+  margin-bottom: 1.5rem;
 }
 
 .card-button {
-  margin-top: 10px;
-  padding: 8px 12px;
-  background-color: #6a1b9a;
-  color: #fff;
+  background-color: #4c00b5;
+  color: white;
   border: none;
-  border-radius: 5px;
+  border-radius: 8px;
+  padding: 0.75rem 1.5rem;
   cursor: pointer;
-  transition: background-color 0.3s;
+  transition: background-color 0.3s ease;
 }
 
 .card-button:hover {
-  background-color: #4a148c;
+  background-color: #370088;
 }
 
-/* Modal */
+
+
+
+
+
+
+/* Modal Overlay */
 .modal-overlay {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.8);
+  background-color: rgba(0, 0, 0, 0.7); /* Fondo oscuro pero más suave */
   display: flex;
   justify-content: center;
   align-items: center;
   z-index: 1000;
+  transition: opacity 0.3s ease-in-out; /* Transición suave al abrir/cerrar el modal */
 }
 
+/* Modal Content */
 .modal-content {
-  background-color: #4a148c;
-  color: #fff;
-  padding: 20px;
-  border-radius: 15px;
-  width: 80%;
-  max-width: 600px;
+  background-color: #ffffff; /* Blanco limpio para contenido */
+  color: #333; /* Texto oscuro para buen contraste */
+  padding: 30px;
+  border-radius: 16px;
+  width: 90%;
+  max-width: 900px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2); /* Sombra sutil para destacar el modal */
+  overflow-y: auto;
+  max-height: 85%;
   position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transform: scale(0.9);
+  animation: modalFadeIn 0.3s forwards; /* Animación al abrir */
 }
 
+/* Animación de apertura del modal */
+@keyframes modalFadeIn {
+  from {
+    transform: scale(0.9);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* Close Button */
 .close-modal {
   position: absolute;
-  top: 10px;
-  right: 10px;
+  top: 20px;
+  right: 20px;
   background: none;
   border: none;
-  color: #fff;
-  font-size: 20px;
+  font-size: 26px;
+  color: #e74c3c; /* Rojo más suave */
   cursor: pointer;
+  transition: color 0.3s ease;
 }
 
-.modal-foto {
-  width: 100px;
-  height: 100px;
-  border-radius: 10px;
-  margin-right: 15px;
+.close-modal:hover {
+  color: #c0392b; /* Rojo más intenso al pasar el cursor */
 }
 
+/* Modal Title (Nombre) */
+/* Modal Title (Nombre) */
+h4 {
+  text-align: center; /* Centrado del nombre */
+  font-size: 3rem; /* Tamaño más grande para destacar el nombre */
+  font-weight: bold;
+  color: #2c3e50; /* Color oscuro pero elegante */
+  margin-bottom: 30px; /* Espacio mayor debajo del nombre */
+  text-transform: capitalize; /* Capitalización de la primera letra */
+  letter-spacing: 1px; /* Espaciado de letras */
+  text-shadow: 2px 2px 12px rgba(0, 0, 0, 0.1); /* Sombra más fuerte para mayor énfasis */
+  font-family: 'Roboto', sans-serif; /* Fuente moderna y limpia */
+}
+
+/* Modal Info Section */
 .modal-info {
   display: flex;
-  gap: 15px;
+  justify-content: center;
   align-items: center;
+  gap: 30px;
+  margin-bottom: 30px;
+  width: 100%;
+  flex-wrap: wrap;
+}
+
+/* Imagen */
+.modal-foto {
+  flex: 1 1 350px;
+  max-width: 350px;
+  height: 350px;
+  border-radius: 12px;
+  object-fit: cover;
+  background-color: #ecf0f1; /* Fondo claro para la imagen */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Sombra más intensa en la imagen */
+  transition: transform 0.3s ease; /* Transición de imagen */
+}
+
+.modal-foto:hover {
+  transform: scale(1.05); /* Efecto al pasar el cursor sobre la imagen */
+}
+
+/* Descripción */
+.modal-descripcion {
+  flex: 1 1 370px;
+  max-width: 370px;
+  background-color: #f9f9f9;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: transform 0.3s ease;
+}
+
+.modal-descripcion h4 {
+  font-size: 1.6rem;
+  color: #2c3e50;
   margin-bottom: 15px;
+  font-weight: bold;
+}
+
+.modal-descripcion p {
+  font-size: 1rem;
+  color: #7f8c8d; /* Gris suave para el texto */
+  line-height: 1.7;
+  text-align: justify;
+}
+
+.modal-descripcion:hover {
+  transform: translateY(-5px); /* Efecto sutil de elevación en la descripción */
+}
+
+/* Historia Section */
+.modal-historia {
+  margin: 0 auto 30px;
+  padding: 25px;
+  background-color: #f4f6f7; /* Fondo gris claro */
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  max-width: 775px;
+}
+
+.modal-historia h4 {
+  font-size: 1.6rem;
+  color: #2c3e50;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+.modal-historia p {
+  font-size: 1rem;
+  color: #7f8c8d;
+  line-height: 1.7;
+}
+
+/* Proceso Section */
+.modal-proceso {
+  margin-top: 30px;
+  text-align: center;
+}
+
+.modal-proceso h4 {
+  font-size: 1.6rem;
+  color: #2c3e50;
+  margin-bottom: 15px;
+  font-weight: bold;
 }
 
 .modal-proceso-img {
   width: 100%;
-  border-radius: 10px;
+  max-width: 775px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.modal-proceso-img:hover {
+  transform: scale(1.05); /* Efecto de ampliación suave en la imagen */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .modal-info {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .modal-foto,
+  .modal-descripcion {
+    max-width: 100%;
+  }
+
+  .modal-foto {
+    margin-bottom: 20px; /* Separación entre foto y descripción en móviles */
+  }
 }
 
 
-
-
-
-  .cards-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 1rem;
-    justify-items: center;
-  }
-  
-  .card {
-    background: white;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    padding: 1rem;
-    text-align: center;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  }
-  
-  .card-image {
-    max-width: 100px;
-    height: auto;
-    margin-bottom: 1rem;
-  }
-  
-  .card-button {
-    background-color: #4c00b5;
-    color: white;
-    border: none;
-    border-radius: 4px;
-    padding: 0.5rem 1rem;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-  }
-  
-  .card-button:hover {
-    background-color: #370088;
-  }
-  
-  /* Pie de página */
-  .footer {
-    background-color: #4c00b5;
-    color: white;
-    padding: 1rem 0;
-    font-size: 0.9rem;
-  }
-  
+/* Pie de página */
+.menu-inicio .footer {
+  background-color: #4c00b5;
+  color: white;
+  padding: 1rem 0;
+  font-size: 0.9rem;
+}

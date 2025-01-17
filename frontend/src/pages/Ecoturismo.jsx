@@ -42,14 +42,18 @@ export const Ecoturismo = () => {
   };
 
   return (
+    <div class="ecoturismo-page">
     <div className="ecoturismo-container">
       <h1>Conoce nuestras rutas</h1>
       <p>Descubre experiencias únicas de turismo rural, agroecología y medicina alternativa en la vereda San José de la Montaña. Vive el legado ancestral y el trabajo comunitario de la Asociación de Mujeres Siempre Vivas.</p>
       <div className="rutas-lista">
         {rutas.map((ruta) => (
           <div key={ruta.id} className="ruta-item">
+            
             <img src={ruta.imagen} alt={ruta.titulo} />
-            <h2>{ruta.titulo}</h2>
+
+            <h2>{ruta.titulo}</h2> 
+            
             <p>{ruta.descripcion}</p>
             <button onClick={() => abrirModal(ruta)}>Más detalles</button>
           </div>
@@ -58,6 +62,7 @@ export const Ecoturismo = () => {
       {modalAbierto && (
         <RutasDetalles ruta={rutaSeleccionada} cerrarModal={cerrarModal} />
       )}
+    </div>
     </div>
   );
 };

@@ -35,7 +35,8 @@ export const Navbar = () => {
             <Link to="/carrito">
             <ShoppingCart size={32} />
             {totalItems > 0 && <span className="cart-count">{totalItems}</span>}
-            </Link>                
+            </Link>
+                
             </div>              
             <>
             <Link to="/usuario">

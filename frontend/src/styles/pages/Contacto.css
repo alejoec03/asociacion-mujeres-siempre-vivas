@@ -1,56 +1,143 @@
 /* frontend/src/styles/pages/Contacto.css */
 
-.contacto-container {
+/* Asegurando que los estilos solo afecten a la vista de Contacto */
+.contacto-page {
+  background: linear-gradient(to bottom, #f0f8ff, #e0f7fa); /* Fondo general */
+  color: #333;
+  font-family: 'Roboto', sans-serif;
+  min-height: 100vh;
+  padding: 40px 20px;
+  box-sizing: border-box;
+}
+
+/* Contenedor principal */
+.contacto-page .contacto-container {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 20px;
-  background: linear-gradient(135deg, #3a8dde, #76b9f2);
+  padding: 40px 20px;
+  background: #ffffff; /* Fondo blanco */
   border-radius: 15px;
-  margin: 20px;
-  color: white;
-  font-family: 'Arial', sans-serif;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  max-width: 900px;
+  margin: 40px auto;
   text-align: center;
+  
 }
 
-.contacto-info h1 {
-  font-size: 2.5rem;
-  margin-bottom: 10px;
+/* Información de contacto */
+.contacto-page .contacto-info h1 {
+  font-size: 2.8em;
+  color: #2a6f97; /* Azul profundo */
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  letter-spacing: 1.2px;
   font-weight: bold;
 }
 
-.contacto-info p {
-  margin: 10px 0;
-  font-size: 1.1rem;
+.contacto-page .contacto-info p {
+  margin: 15px 0;
+  font-size: 1.2em;
+  color: #555; /* Gris oscuro */
+  line-height: 1.8;
 }
 
-.contacto-info a {
-  color: #fff;
+.contacto-page .contacto-info a {
+  color: #2a6f97; /* Azul profundo */
   text-decoration: none;
   font-weight: bold;
+  transition: color 0.3s ease;
 }
 
-.contacto-info a:hover {
+.contacto-page .contacto-info a:hover {
+  color: #1e4d6d; /* Azul más oscuro */
   text-decoration: underline;
 }
 
-.icon {
-  width: 20px;
+/* Ícono dentro de la información */
+.contacto-page .icon {
+  width: 24px;
   margin-right: 8px;
   vertical-align: middle;
+  filter: invert(28%) sepia(26%) saturate(743%) hue-rotate(182deg) brightness(91%) contrast(89%);
+  text-align: center;
+  align-items: center;
+  justify-self: center
 }
 
-.contacto-mapa {
-  margin-top: 20px;
+/* Mapa de contacto */
+.contacto-page .contacto-mapa {
+  margin-top: 30px;
   width: 100%;
   max-width: 800px;
-  border-radius: 10px;
+  border-radius: 15px;
   overflow: hidden;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
 }
 
-iframe {
+.contacto-page iframe {
   width: 100%;
   height: 450px;
   border: none;
+}
+
+/* Estilo del botón de enviar mensaje */
+.contacto-page .contacto-form button {
+  margin-top: 20px;
+  padding: 12px 25px;
+  background-color: #2a6f97; /* Azul profundo */
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-size: 1.1em;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+.contacto-page .contacto-form button:hover {
+  background-color: #1e4d6d; /* Azul más oscuro */
+  transform: scale(1.05); /* Efecto de agrandamiento */
+}
+
+/* Estilo del formulario */
+.contacto-page .contacto-form {
+  margin-top: 40px;
+  width: 100%;
+  max-width: 600px;
+}
+
+.contacto-page .contacto-form input,
+.contacto-page .contacto-form textarea {
+  width: 100%;
+  padding: 15px;
+  margin: 10px 0;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 1em;
+  font-family: 'Roboto', sans-serif;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+  transition: border-color 0.3s ease;
+}
+
+.contacto-page .contacto-form input:focus,
+.contacto-page .contacto-form textarea:focus {
+  border-color: #2a6f97; /* Azul profundo */
+  outline: none;
+  box-shadow: 0 0 8px rgba(42, 111, 151, 0.3);
+}
+
+/* Responsividad */
+@media (max-width: 768px) {
+  .contacto-page .contacto-container {
+      padding: 30px 15px;
+  }
+
+  .contacto-page .contacto-info h1 {
+      font-size: 2em;
+  }
+
+  .contacto-page iframe {
+      height: 300px;
+  }
 }

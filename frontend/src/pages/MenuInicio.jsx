@@ -68,6 +68,7 @@ export const MenuInicio = () => {
   };
 
   return (
+    
     <div className="menu-inicio">
       {/* Sección de encabezado */}
       <header className="menu-inicio-header">
@@ -85,10 +86,15 @@ export const MenuInicio = () => {
             style={{ borderRadius: '10px', width: '600px', height: 'auto' }}
           />
           <p>
-            En la Asociación Siempre Vivas, somos una organización sin ánimo de lucro comprometida con la construcción
-            de un territorio rural campesino inclusivo, con enfoque de género y un profundo respeto por el intercambio
-            generacional. Nos encontramos en la vereda San José de la Montaña, en el corregimiento de San Cristóbal del
-            distrito de Medellín, Antioquia.
+          En la Asociación Siempre Vivas, somos una organización sin ánimo de lucro comprometida con la 
+          construcción de un territorio rural campesino inclusivo, con enfoque de género y un profundo 
+          respeto por el intercambio generacional. Nos encontramos en la vereda San José de la Montaña, 
+          en el corregimiento de San Cristóbal del distrito de Medellín, Antioquia.
+          </p>
+          
+          <p>
+          Unidas por nuestras raíces y visión, trabajamos cada día para fortalecer nuestra identidad, 
+          empoderar a las mujeres campesinas y preservar nuestro patrimonio natural y cultural.
           </p>
         </div>
       </section>
@@ -119,7 +125,11 @@ export const MenuInicio = () => {
             <button className="close-modal" onClick={closeModal}>
               ✕
             </button>
-            <h2>{selectedMujer.nombre}</h2>
+            <div className="close-modal:hover">
+
+
+            <h4>{selectedMujer.nombre}</h4>
+            </div>
             <div className="modal-info">
               <img src={selectedMujer.foto} alt={selectedMujer.nombre} className="modal-foto" />
               <div className="modal-descripcion">
@@ -147,6 +157,8 @@ export const MenuInicio = () => {
           reservados.
         </p>
       </footer>
+
+    
       </div>
       
     </div>

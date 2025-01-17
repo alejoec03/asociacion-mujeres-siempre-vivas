@@ -67,7 +67,10 @@ const ProductosDetalles = ({ producto }) => {
             <button className="close-modal" onClick={handleCloseModal}>
               ✕
             </button>
-            <h2>{producto.nombre}</h2>
+            <div className="modal-content h4">
+            <h4>{producto.nombre}</h4>
+            </div>
+           
             <div className="modal-info">
               <img
                 src={producto.imagen}

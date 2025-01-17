@@ -1,125 +1,214 @@
 /* frontend/src/styles/pages/Ecoturismo.css */
 
+/* Asegurando que los estilos solo afecten a la vista de Ecoturismo */
+.ecoturismo-page {
+  /* Fondo general de la página */
+  background: linear-gradient(to bottom, #f0f8ff, #e0f7fa); /* Azul claro degradado */
+  color: #333;
+  font-family: 'Roboto', sans-serif;
+  min-height: 100vh;
+  padding: 40px 20px;
+  box-sizing: border-box;
+}
+
 /* Contenedor principal */
-.ecoturismo-container {
-    text-align: center;
-    padding: 40px;
-    background-color: #f0f8ff;
-  }
+.ecoturismo-page .ecoturismo-container {
+  text-align: center;
+  padding: 40px 20px;
+  background: #ffffff;
+  border-radius: 15px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  margin: auto;
+  max-width: 1200px;
+}
+
+/* Título principal */
+.ecoturismo-page .ecoturismo-container h1 {
+  font-size: 2.8em;
+  color: #2a6f97; /* Azul profundo */
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  letter-spacing: 1.2px;
+  font-weight: bold;
+}
+
+/* Descripción general */
+.ecoturismo-page .ecoturismo-container p {
+  font-size: 1.2em;
+  color: #444;
+  margin-bottom: 40px;
+  line-height: 1.8;
+}
+
+/* Lista de rutas */
+.ecoturismo-page .rutas-lista {
+  display: flex;
+  flex-wrap: wrap; /* Mejor para diseños responsivos */
+  gap: 30px;
+  justify-content: center;
+}
+
+/* Tarjeta de cada ruta */
+.ecoturismo-page .ruta-item {
+  background-color: #f9fbff; /* Azul claro */
+  border-radius: 15px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 600px;
+  padding: 20px;
+  text-align: left;
+  transition: transform 0.3s, box-shadow 0.3s;
   
-  /* Título principal */
-  .ecoturismo-container h1 {
-    font-size: 2.5em;
-    color: #2a6f97;
-    margin-bottom: 10px;
-  }
+}
+
+
+
+.ecoturismo-page .ruta-item:hover {
+  transform: translateY(-5px); /* Efecto de elevación al pasar el cursor */
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Imagen de la ruta */
+.ecoturismo-page .ruta-item img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+/* Título de la ruta */
+.ecoturismo-page .ruta-item h2 {
+  font-size: 2em;
+  margin-top: 15px;
+  color: #2a6f97; /* Azul profundo */
+  font-weight: bold;
   
-  /* Descripción general */
-  .ecoturismo-container p {
-    font-size: 1.2em;
-    color: #555;
-    margin-bottom: 30px;
-  }
+}
+
+/* Descripción breve */
+.ecoturismo-page .ruta-item p {
+  font-size: 1.1em;
+  color: #666;
+  margin-top: 10px;
+  line-height: 1.6;
+}
+
+/* Botón 'Más detalles' */
+.ecoturismo-page .ruta-item button {
+  margin-top: 20px;
+  padding: 12px 25px;
+  background-color: #2a6f97; /* Azul profundo */
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-size: 1em;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+.ecoturismo-page .ruta-item button:hover {
+  background-color: #1e4d6d; /* Azul más oscuro */
+  transform: scale(1.05); /* Ligeramente más grande al pasar el cursor */
+}
+
+/* Fondo del modal */
+.ecoturismo-page .modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+/* Contenido del modal */
+.ecoturismo-page .modal-content {
+  background-color: #ffffff;
+  padding: 30px;
+  border-radius: 15px;
+  width: 100%;
+  max-width: 700px;
+  max-height: 85vh;
+  overflow-y: auto;
+  text-align: center;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  animation: modalFadeIn 0.4s ease-out;
+
+}
+
+.ecoturismo-page .modal-content h2 {
+  padding-bottom: 20px;
+  padding-top: 50px;  
   
-  /* Lista de rutas */
-  .rutas-lista {
-    display: flex;
-    flex-direction: column;
-    gap: 30px;
-    align-items: center;
-  }
   
-  /* Tarjeta de cada ruta */
-  .ruta-item {
-    background-color: #ffffff;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    width: 600px;
-    padding: 20px;
-    text-align: left;
+
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-align: center;
+  color: #fff;
+  margin-bottom: 40px;
+  text-transform: capitalize;
+  letter-spacing: 1px;
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
+  padding: 10px;
+  background-color: rgba(0, 0, 0, 0.4);
+  border-radius: 8px;
+  width: 100%;
+}
+
+/* Animación de aparición */
+@keyframes modalFadeIn {
+  from {
+      opacity: 0;
+      transform: scale(0.9);
   }
-  
-  /* Imagen de la ruta */
-  .ruta-item img {
-    width: 100%;
-    height: auto;
-    border-radius: 10px;
+  to {
+      opacity: 1;
+      transform: scale(1);
   }
-  
-  /* Título de la ruta */
-  .ruta-item h2 {
-    font-size: 1.8em;
-    margin-top: 10px;
-    color: #2a6f97;
+}
+
+/* Imagen dentro del modal */
+.ecoturismo-page .modal-content img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Botón de cerrar modal */
+.ecoturismo-page .modal-content button {
+  margin-top: 20px;
+  padding: 12px 25px;
+  background-color: #d9534f; /* Rojo suave */
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-size: 1em;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+.ecoturismo-page .modal-content button:hover {
+  background-color: #c9302c; /* Rojo más oscuro */
+  transform: scale(1.05);
+}
+
+/* Estilo responsivo */
+@media (max-width: 768px) {
+  .ecoturismo-page .ruta-item {
+      width: 90%;
   }
-  
-  /* Descripción breve */
-  .ruta-item p {
-    font-size: 1em;
-    color: #666;
-    margin-top: 10px;
+
+  .ecoturismo-page .modal-content {
+      width: 95%;
+      padding: 20px;
   }
-  
-  /* Botón 'Más detalles' */
-  .ruta-item button {
-    margin-top: 15px;
-    padding: 10px 20px;
-    background-color: #2a6f97;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-  }
-  
-  .ruta-item button:hover {
-    background-color: #1e4d6d;
-  }
-  
-  /* Fondo del modal */
-  .modal-overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  
-  /* Contenido del modal */
-  .modal-content {
-    background-color: #ffffff;
-    padding: 30px;
-    border-radius: 10px;
-    width: 670px;
-    max-height: 80vh;
-    overflow-y: auto;
-    text-align: center;
-  }
-  
-  /* Imagen dentro del modal */
-  .modal-content img {
-    width: 100%;
-    height: auto;
-    border-radius: 10px;
-    margin-bottom: 20px;
-  }
-  
-  /* Botón de cerrar modal */
-  .modal-content button {
-    margin-top: 20px;
-    padding: 10px 20px;
-    background-color: #d9534f;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-  }
-  
-  .modal-content button:hover {
-    background-color: #c9302c;
-  }
-  
+}
