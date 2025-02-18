@@ -76,54 +76,74 @@ export const Carrito = () => {
 
   return (
     <div class="carrito-page">
-    <div className="carrito-page">
-      <h1>CARRITO DE COMPRAS</h1>
-      {productosEnCarrito.length === 0 ? (
-        <p>Tu carrito está vacío.</p>
-      ) : (
-        <>
-          <div className="carrito-list">
-            {productosEnCarrito.map((producto) => (
-              <div key={producto.id} className="carrito-item">
-                <img src={producto.imagen} alt={producto.nombre} className="producto-imagen" />
-                <div className="carrito-detalle">
-                  <h3>{producto.nombre}</h3>
-                  <p>Precio: ${producto.precio.toLocaleString()}</p>
-                  <p>Cantidad: {cartItems[producto.id]}</p>
-                  <p>Subtotal: ${(producto.precio * cartItems[producto.id]).toLocaleString()}</p>
-                  <button
-                    className="btn btn-eliminar"
-                    onClick={() => removeFromCart(producto.id)}
-                  >
-                    Eliminar
-                  </button>
+      <div className="carrito-page">
+        <h1>CARRITO DE COMPRAS</h1>
+        {productosEnCarrito.length === 0 ? (
+          <p>Tu carrito está vacío.</p>
+        ) : (
+          <>
+            <div className="carrito-list">
+              {productosEnCarrito.map((producto) => (
+                <div key={producto.id} className="carrito-item">
+                  <img src={producto.imagen} alt={producto.nombre} className="producto-imagen" />
+                  <div className="carrito-detalle">
+                    <h3>{producto.nombre}</h3>
+                    <p>Precio: ${producto.precio.toLocaleString()}</p>
+                    <p>Cantidad: {cartItems[producto.id]}</p>
+                    <p>Subtotal: ${(producto.precio * cartItems[producto.id]).toLocaleString()}</p>
+                    <button
+                      className="btn btn-eliminar"
+                      onClick={() => removeFromCart(producto.id)}
+                    >
+                      Eliminar
+                    </button>
+                  </div>
                 </div>
-              </div>
-            ))}
-          </div>
-          <div className="carrito-resumen">
-            <h2>Total: ${total.toLocaleString()}</h2>
-            <div className="botones-finalizar">
-              <button className="btn btn-realizar-compra">Realizar compra</button>
-              <button className="btn btn-vaciar-carrito" onClick={clearCart}>
-                Vaciar carrito
-              </button>
+              ))}
             </div>
-          </div>
-        </>
-      )}
+            <div className="carrito-resumen">
+              <h2>Total: ${total.toLocaleString()}</h2>
+              <div className="botones-finalizar">
+                <button
+                  className="btn btn-realizar-compra"
+                  onClick={() => {
+                    const numeroWhatsApp = "573003946769"; // Reemplaza con el número de destino en formato internacional sin "+"
 
-     {/* Pie de página */}
-     <footer className="footer">
-        <p>
-          Copyright © 2025 Asociación Mujeres Siempre Vivas. Todos los derechos
-          reservados.
-        </p>
-      </footer>
+                    // Generar el mensaje con los productos
+                    const mensaje = productosEnCarrito.map(
+                      (producto) => `${producto.nombre}: ${cartItems[producto.id]} unidades`
+                    ).join("\n");
 
+                    // Crear el enlace de WhatsApp
+                    const url = `https://wa.me/${numeroWhatsApp}?text=${encodeURIComponent("Hola, quiero realizar una compra:\n\n" + mensaje + `\n\nTotal: $${total.toLocaleString()}`)}`;
+
+                    // Redirigir a WhatsApp
+                    //window.location.href = url;
+                    window.open(url, "_blank", "noopener,noreferrer");
+                  }}
+                >
+                  Realizar compra
+                </button>
+
+                <button className="btn btn-vaciar-carrito" onClick={clearCart}>
+                  Vaciar carrito
+                </button>
+              </div>
+            </div>
+          </>
+        )}
+
+        {/* Pie de página */}
+        <footer className="footer">
+          <p>
+            Copyright © 2025 Asociación Mujeres Siempre Vivas. Todos los derechos
+            reservados.
+          </p>
+        </footer>
+
+      </div>
     </div>
-    </div>
 
-    
+
   );
 };
